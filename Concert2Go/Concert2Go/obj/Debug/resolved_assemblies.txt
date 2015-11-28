@@ -1,0 +1,6 @@
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\Concert2Go.dll
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\Mono.Android.dll
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\mscorlib.dll
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\System.Core.dll
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\System.dll
+C:\Users\Dennis\Documents\Projects\Concert2Go\Concert2Go\obj\Debug\assemblies\System.Xml.dll

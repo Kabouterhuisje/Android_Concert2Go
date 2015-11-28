@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Concert2Go\Concert2Go.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Concert2Go\Toevoegen.cs">
+    <Files>
+      <File FileName="Concert2Go\MainActivity.cs" Line="36" Column="4" />
+      <File FileName="Concert2Go\Toevoegen.cs" Line="49" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Concert2Go AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
