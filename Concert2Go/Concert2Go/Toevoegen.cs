@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace Concert2Go
 {
@@ -20,6 +21,9 @@ namespace Concert2Go
 		private Button pickDate;
 		private DateTime date;
 		private Button btnSave;
+
+
+
 
 		const int DATE_DIALOG_ID = 0;
 
@@ -34,6 +38,8 @@ namespace Concert2Go
 			pickDate = FindViewById<Button> (Resource.Id.pickDate);
 			btnSave = FindViewById<Button> (Resource.Id.btnSave);
 
+
+
 			// add a click event handler to the button
 			pickDate.Click += delegate { ShowDialog (DATE_DIALOG_ID); };
 
@@ -47,6 +53,9 @@ namespace Concert2Go
 			// Click event voor het opslaan van de data
 			btnSave.Click += (object IntentSender, EventArgs e) => {
 				
+				ConcertenDB cdb = new ConcertenDB();
+
+				//cdb.insertUpdateData();
 			};
 		
 		}
@@ -119,6 +128,8 @@ namespace Concert2Go
 			}
 			return false;
 		}
+
+
 
 
 	}
