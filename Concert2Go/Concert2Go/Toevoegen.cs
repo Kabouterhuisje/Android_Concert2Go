@@ -54,8 +54,8 @@ namespace Concert2Go
 			btnSave.Click += (object IntentSender, EventArgs e) => {
 				
 				ConcertenDB cdb = new ConcertenDB();
-
-				//cdb.insertUpdateData();
+				Concerten dataInput = new Concerten();
+				cdb.insertUpdateData(dataInput);
 			};
 		
 		}

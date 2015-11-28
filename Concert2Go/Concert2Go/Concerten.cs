@@ -20,7 +20,7 @@ namespace Concert2Go
 
 		public string Zaal { get; set; }
 
-		public string Datum { get; set; }
+		public DateTime Datum { get; set; }
 
 		public string Opmerking { get; set; }
 
