@@ -22,8 +22,12 @@ namespace Concert2Go
 		private DateTime date;
 		private Button btnSave;
 
-
-
+		private EditText art;
+		private EditText lnd;
+		private EditText plts;
+		private EditText zl;
+		private EditText dtm;
+		private EditText opm;
 
 		const int DATE_DIALOG_ID = 0;
 
@@ -38,6 +42,12 @@ namespace Concert2Go
 			pickDate = FindViewById<Button> (Resource.Id.pickDate);
 			btnSave = FindViewById<Button> (Resource.Id.btnSave);
 
+			art = FindViewById<EditText> (Resource.Id.ArtiestTekst);
+			lnd = FindViewById<EditText> (Resource.Id.LandTekst);
+			plts = FindViewById<EditText> (Resource.Id.PlaatsTekst);
+			zl = FindViewById<EditText> (Resource.Id.ZaalTekst);
+			dtm = FindViewById<EditText> (Resource.Id.DatumTekst);
+			opm = FindViewById<EditText> (Resource.Id.OpmerkingTekst);
 
 
 			// add a click event handler to the button
@@ -55,6 +65,12 @@ namespace Concert2Go
 				
 				ConcertenDB cdb = new ConcertenDB();
 				Concerten dataInput = new Concerten();
+				dataInput.Artiest = art.ToString();
+				dataInput.Land = lnd.ToString();
+				dataInput.Plaats = plts.ToString();
+				dataInput.Zaal = zl.ToString();
+				dataInput.Datum = Convert.ToDateTime(dtm);
+				dataInput.Opmerking = opm.ToString();
 				cdb.insertUpdateData(dataInput);
 			};
 		
