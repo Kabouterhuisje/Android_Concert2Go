@@ -65,13 +65,22 @@ namespace Concert2Go
 				
 				ConcertenDB cdb = new ConcertenDB();
 				Concerten dataInput = new Concerten();
-				dataInput.Artiest = art.ToString();
+				dataInput.Artiest = art.Text.ToString();
 				dataInput.Land = lnd.ToString();
 				dataInput.Plaats = plts.ToString();
 				dataInput.Zaal = zl.ToString();
-				dataInput.Datum = Convert.ToDateTime(dtm);
+				dataInput.Datum = DateTime.Parse(dtm.Text);
 				dataInput.Opmerking = opm.ToString();
-				cdb.insertUpdateData(dataInput);
+				if(cdb.insertUpdateData(dataInput))
+				{
+					Toast.MakeText(this, "Je gegevens zijn succesvol toegevoegd!", ToastLength.Long).Show();
+					art.Text = "";
+					lnd.Text = "";
+					plts.Text = "";
+					zl.Text = "";
+					dtm.Text = DateTime.Now.ToString();
+					opm.Text = "";
+				}
 			};
 		
 		}

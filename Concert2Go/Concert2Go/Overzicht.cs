@@ -16,11 +16,22 @@ namespace Concert2Go
 	[Activity (Label = "Overzicht")]			
 	public class Overzicht : Activity
 	{
+		private ListView lv;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Overzicht);
+
+			lv = FindViewById<ListView> (Resource.Id.lvConcerten);
+			ConcertenDB csdb = new ConcertenDB ();
+			ArrayAdapter<string> adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
+			lv.Adapter = adapter;
+
+			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+				Toast.MakeText(this, e.Position.ToString(), ToastLength.Short).Show();
+			};
 		}
 
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)

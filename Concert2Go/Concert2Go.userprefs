@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Concert2Go\Concert2Go.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_23_x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Concert2Go\ConcertenDB.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Concert2Go\Concerten.cs">
     <Files>
       <File FileName="Concert2Go\MainActivity.cs" Line="1" Column="1" />
-      <File FileName="Concert2Go\Toevoegen.cs" Line="1" Column="1" />
       <File FileName="Concert2Go\ConcertenDB.cs" Line="20" Column="3" />
+      <File FileName="Concert2Go\Toevoegen.cs" Line="43" Column="4" />
+      <File FileName="Concert2Go\Concerten.cs" Line="12" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

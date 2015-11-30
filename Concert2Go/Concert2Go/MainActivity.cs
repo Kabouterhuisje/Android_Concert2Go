@@ -21,15 +21,7 @@ namespace Concert2Go
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			//----- PAS ACTIVEREN NADAT ER DATA IN DATABASE STAAT!!!-----//
 
-			/*lv = FindViewById<ListView> (Resource.Id.lvConcerten);
-
-			ConcertenDB csdb = new ConcertenDB ();
-			ArrayAdapter<string> adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
-			lv.Adapter = adapter;*/
-
-			//-----------------------------------------------------------//
 		}
 
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
@@ -78,6 +70,8 @@ namespace Concert2Go
 			}
 			return false;
 		}
+
+
 	}
 }
 

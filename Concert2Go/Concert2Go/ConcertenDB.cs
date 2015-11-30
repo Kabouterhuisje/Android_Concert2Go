@@ -2,12 +2,20 @@
 using SQLite;
 using System.Collections.Generic;
 
+using Android.App;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+
 namespace Concert2Go
 {
 	public class ConcertenDB
 	{
 		public SQLiteConnection db;
 		public string result;
+
 
 		public ConcertenDB ()
 		{
@@ -32,17 +40,22 @@ namespace Concert2Go
 			}
 		}
 
-		public string insertUpdateData(Concerten data)
+		public bool insertUpdateData(Concerten data)
 		{
 			try
 			{
 				if (db.Insert(data) != 0)
+				{
 					db.Update(data);
-				return "ok";
+
+
+				}
+					
+				return true;
 			}
 			catch(SQLiteException ex) 
 			{
-				return ex.Message;
+				return false;
 			}
 		}
 
@@ -84,7 +97,7 @@ namespace Concert2Go
 			List<String> rijen = new List<String> ();
 			var table = db.Query<Concerten> ("SELECT * FROM Concerten ORDER BY Datum ASC");
 			foreach (var s in table) {
-				rijen.Add (string.Format ("{1} {2}", s.Datum, s.Artiest));
+				rijen.Add (string.Format ("{1} {2}", s.Datum.ToShortDateString(), s.Datum, s.Artiest));
 			}
 			return rijen;
 		}
