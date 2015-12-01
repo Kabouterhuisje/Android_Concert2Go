@@ -26,6 +26,7 @@ namespace Concert2Go
 		private EditText lnd;
 		private EditText plts;
 		private EditText zl;
+		private Spinner sp;
 		private EditText dtm;
 		private EditText opm;
 
@@ -46,6 +47,7 @@ namespace Concert2Go
 			lnd = FindViewById<EditText> (Resource.Id.LandTekst);
 			plts = FindViewById<EditText> (Resource.Id.PlaatsTekst);
 			zl = FindViewById<EditText> (Resource.Id.ZaalTekst);
+			sp = FindViewById<Spinner> (Resource.Id.SpinnerMuzieksoort);
 			dtm = FindViewById<EditText> (Resource.Id.DatumTekst);
 			opm = FindViewById<EditText> (Resource.Id.OpmerkingTekst);
 
@@ -59,6 +61,13 @@ namespace Concert2Go
 			// display the current date (this method is below)
 			UpdateDisplay ();
 
+			sp.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (sp_ItemSelected);
+			var adapter = ArrayAdapter.CreateFromResource (
+				this, Resource.Array.genre_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+			adapter.SetDropDownViewResource (Android.Resource.Layout.SimpleSpinnerDropDownItem);
+			sp.Adapter = adapter;
+
 
 			// Click event voor het opslaan van de data
 			btnSave.Click += (object IntentSender, EventArgs e) => {
@@ -66,11 +75,12 @@ namespace Concert2Go
 				ConcertenDB cdb = new ConcertenDB();
 				Concerten dataInput = new Concerten();
 				dataInput.Artiest = art.Text.ToString();
-				dataInput.Land = lnd.ToString();
-				dataInput.Plaats = plts.ToString();
-				dataInput.Zaal = zl.ToString();
+				dataInput.Land = lnd.Text.ToString();
+				dataInput.Plaats = plts.Text.ToString();
+				dataInput.Zaal = zl.Text.ToString();
+				dataInput.Muzieksoort = sp.SelectedItem.ToString();
 				dataInput.Datum = DateTime.Parse(dtm.Text);
-				dataInput.Opmerking = opm.ToString();
+				dataInput.Opmerking = opm.Text.ToString();
 				if(cdb.insertUpdateData(dataInput))
 				{
 					Toast.MakeText(this, "Je gegevens zijn succesvol toegevoegd!", ToastLength.Long).Show();
@@ -78,6 +88,7 @@ namespace Concert2Go
 					lnd.Text = "";
 					plts.Text = "";
 					zl.Text = "";
+					sp.SelectedItem.Dispose();
 					dtm.Text = DateTime.Now.ToString();
 					opm.Text = "";
 				}
@@ -154,7 +165,13 @@ namespace Concert2Go
 			return false;
 		}
 
+		private void sp_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
+		{
+			Spinner spinner = (Spinner)sender;
 
+			string toast = string.Format ("Je hebt gekozen voor {0}", spinner.GetItemAtPosition (e.Position));
+			Toast.MakeText (this, toast, ToastLength.Long).Show ();
+		}
 
 
 	}

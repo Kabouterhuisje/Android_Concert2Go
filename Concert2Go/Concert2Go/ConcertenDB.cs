@@ -97,7 +97,7 @@ namespace Concert2Go
 			List<String> rijen = new List<String> ();
 			var table = db.Query<Concerten> ("SELECT * FROM Concerten ORDER BY Datum ASC");
 			foreach (var s in table) {
-				rijen.Add (string.Format ("{1} {2}", s.Datum.ToShortDateString(), s.Datum, s.Artiest));
+				rijen.Add (string.Format ("Datum: {1} | Artiest: {2} | Land: {3} | Plaats: {4} | Zaal: {5} | Genre: {6} | Opmerking: {7}", s.Datum.ToShortDateString(), s.Datum, s.Artiest, s.Land, s.Plaats, s.Zaal, s.Muzieksoort, s.Opmerking));
 			}
 			return rijen;
 		}

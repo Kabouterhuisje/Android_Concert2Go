@@ -49,6 +49,17 @@
         android:width="500px"
         android:background="@android:color/white"
         android:textSize="30px" />
+    <TextView
+        android:text="Muzieksoort"
+        android:textSize="30px"
+        android:padding="20px"
+        android:textColor="@android:color/white" />
+    <Spinner
+        android:id="@+id/SpinnerMuzieksoort"
+        android:background="@android:color/black"
+        android:prompt="@string/genre_prompt"
+        android:layout_height="wrap_content"
+        android:layout_width="500px" />
     <Button
         android:text="Datum"
         android:id="@+id/pickDate"

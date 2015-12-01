@@ -3,4 +3,31 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">Concert2Go</string>
 	<string name="menuitem1">Home</string>
+	<string name="genre_prompt">Kies een muzieksoort</string>
+	<string-array name="genre_array">
+		<item>Alternative</item>
+		<item>Blues</item>
+		<item>Classical</item>
+		<item>Country</item>
+		<item>Dance</item>
+		<item>Electronic</item>
+		<item>Folk</item>
+		<item>Hip Hop/Rap</item>
+		<item>RenB</item>
+		<item>Rock</item>
+		<item>World Music</item>
+		<item>Industrial</item>
+		<item>Indie</item>
+		<item>Gospel</item>
+		<item>J-Pop/K-Pop</item>
+		<item>Jazz</item>
+		<item>Latin</item>
+		<item>New Age</item>
+		<item>Opera</item>
+		<item>Pop</item>
+		<item>Reggae</item>
+		<item>Singer-Songwriter</item>
+		<item>Metal</item>
+		<item>Punk</item>
+	</string-array>
 </resources>
