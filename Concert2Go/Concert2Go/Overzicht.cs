@@ -10,13 +10,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Text;
 
 namespace Concert2Go
 {
+	
 	[Activity (Label = "Overzicht")]			
 	public class Overzicht : Activity
 	{
 		private ListView lv;
+		private EditText sv;
+		private ArrayAdapter<string> adapter;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -25,13 +29,18 @@ namespace Concert2Go
 			SetContentView (Resource.Layout.Overzicht);
 
 			lv = FindViewById<ListView> (Resource.Id.lvConcerten);
+			sv = FindViewById<EditText> (Resource.Id.txtZoeken);
 			ConcertenDB csdb = new ConcertenDB ();
-			ArrayAdapter<string> adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
+			adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
 			lv.Adapter = adapter;
 
 			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				Toast.MakeText(this, e.Position.ToString(), ToastLength.Short).Show();
 			};
+
+			sv.TextChanged += InputSearchTextChanged;
+
+
 		}
 
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
@@ -80,6 +89,12 @@ namespace Concert2Go
 			}
 			return false;
 		}
+
+		private void InputSearchTextChanged(object sender, TextChangedEventArgs args)
+		{
+			adapter.Filter.InvokeFilter (sv.Text);
+		}
+
 	}
 }
 

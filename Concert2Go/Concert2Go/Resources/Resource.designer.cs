@@ -88,29 +88,29 @@ namespace Concert2Go
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070003
-			public const int ArtiestTekst = 2131165187;
-			
-			// aapt resource value: 0x7f070009
-			public const int DatumTekst = 2131165193;
-			
 			// aapt resource value: 0x7f070004
-			public const int LandTekst = 2131165188;
+			public const int ArtiestTekst = 2131165188;
 			
 			// aapt resource value: 0x7f07000a
-			public const int OpmerkingTekst = 2131165194;
+			public const int DatumTekst = 2131165194;
 			
 			// aapt resource value: 0x7f070005
-			public const int PlaatsTekst = 2131165189;
-			
-			// aapt resource value: 0x7f070007
-			public const int SpinnerMuzieksoort = 2131165191;
-			
-			// aapt resource value: 0x7f070006
-			public const int ZaalTekst = 2131165190;
+			public const int LandTekst = 2131165189;
 			
 			// aapt resource value: 0x7f07000b
-			public const int btnSave = 2131165195;
+			public const int OpmerkingTekst = 2131165195;
+			
+			// aapt resource value: 0x7f070006
+			public const int PlaatsTekst = 2131165190;
+			
+			// aapt resource value: 0x7f070008
+			public const int SpinnerMuzieksoort = 2131165192;
+			
+			// aapt resource value: 0x7f070007
+			public const int ZaalTekst = 2131165191;
+			
+			// aapt resource value: 0x7f07000c
+			public const int btnSave = 2131165196;
 			
 			// aapt resource value: 0x7f070000
 			public const int imageView1 = 2131165184;
@@ -118,11 +118,14 @@ namespace Concert2Go
 			// aapt resource value: 0x7f070001
 			public const int linearLayout1 = 2131165185;
 			
-			// aapt resource value: 0x7f070002
-			public const int lvConcerten = 2131165186;
+			// aapt resource value: 0x7f070003
+			public const int lvConcerten = 2131165187;
 			
-			// aapt resource value: 0x7f070008
-			public const int pickDate = 2131165192;
+			// aapt resource value: 0x7f070009
+			public const int pickDate = 2131165193;
+			
+			// aapt resource value: 0x7f070002
+			public const int txtZoeken = 2131165186;
 			
 			static Id()
 			{

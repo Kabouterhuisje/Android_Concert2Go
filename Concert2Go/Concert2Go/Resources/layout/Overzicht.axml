@@ -7,10 +7,18 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:id="@+id/linearLayout1">
+    <EditText
+        android:id="@+id/txtZoeken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        android:textSize="30px"
+        android:hint="Zoeken" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/lvConcerten" />
 </LinearLayout>
