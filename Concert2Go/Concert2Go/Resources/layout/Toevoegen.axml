@@ -50,7 +50,7 @@
         android:background="@android:color/white"
         android:textSize="30px" />
     <TextView
-        android:text="Muzieksoort"
+        android:text="Genre"
         android:textSize="30px"
         android:padding="20px"
         android:textColor="@android:color/white" />
