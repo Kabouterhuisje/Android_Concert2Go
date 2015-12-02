@@ -15,6 +15,8 @@ namespace Concert2Go
 	{
 		public SQLiteConnection db;
 		public string result;
+		private string sqldb_query;
+		private string sqldb_message;
 
 
 		public ConcertenDB ()
@@ -47,8 +49,6 @@ namespace Concert2Go
 				if (db.Insert(data) != 0)
 				{
 					db.Update(data);
-
-
 				}
 					
 				return true;
@@ -97,10 +97,25 @@ namespace Concert2Go
 			List<String> rijen = new List<String> ();
 			var table = db.Query<Concerten> ("SELECT * FROM Concerten ORDER BY Datum ASC");
 			foreach (var s in table) {
-				rijen.Add (string.Format ("Datum: {1} | Artiest: {2} | Land: {3} | Plaats: {4} | Zaal: {5} | Genre: {6} | Opmerking: {7}", s.Datum.ToShortDateString(), s.Datum, s.Artiest, s.Land, s.Plaats, s.Zaal, s.Muzieksoort, s.Opmerking));
+				rijen.Add (string.Format ("Datum: {1} | Artiest: {2} | Land: {3} | Plaats: {4} | Zaal: {5} | Genre: {6} | Opmerking: {7} | ID: {8}", s.Datum.ToShortDateString(), s.Datum, s.Artiest, s.Land, s.Plaats, s.Zaal, s.Muzieksoort, s.Opmerking, s.ID));
 			}
 			return rijen;
 		}
+
+		public void DeleteRecord(int iId)
+		{
+			try
+			{
+				sqldb_query = "DELETE FROM Concerten WHERE ID ='" + iId + "';";
+				db.Execute(sqldb_query);
+				sqldb_message = "Record " + iId + " Verwijderd";
+			}
+			catch(SQLiteException ex) 
+			{
+				sqldb_message = ex.Message;
+			}
+		}
+
 	}
 }
 

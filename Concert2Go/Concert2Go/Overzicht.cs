@@ -21,6 +21,8 @@ namespace Concert2Go
 		private ListView lv;
 		private EditText sv;
 		private ArrayAdapter<string> adapter;
+		private EditText del;
+	
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -30,12 +32,17 @@ namespace Concert2Go
 
 			lv = FindViewById<ListView> (Resource.Id.lvConcerten);
 			sv = FindViewById<EditText> (Resource.Id.txtZoeken);
+			del = FindViewById<EditText> (Resource.Id.txtVerwijderen);
 			ConcertenDB csdb = new ConcertenDB ();
 			adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
 			lv.Adapter = adapter;
 
 			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				Toast.MakeText(this, e.Position.ToString(), ToastLength.Short).Show();
+				Concerten cs = new Concerten();
+				int positie = Convert.ToInt16(del.Text);
+
+				csdb.DeleteRecord(positie);
 			};
 
 			sv.TextChanged += InputSearchTextChanged;

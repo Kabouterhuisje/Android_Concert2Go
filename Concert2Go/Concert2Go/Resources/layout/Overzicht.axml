@@ -16,6 +16,15 @@
         android:inputType="text"
         android:textSize="30px"
         android:hint="Zoeken" />
+    <EditText
+        android:id="@+id/txtVerwijderen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@android:color/white"
+        android:inputType="text"
+        android:textSize="30px"
+        android:hint="Verwijderen" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"

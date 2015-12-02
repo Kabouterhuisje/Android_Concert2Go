@@ -75,4 +75,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\Concert2Go.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\Raw\" />
+  </ItemGroup>
 </Project>
