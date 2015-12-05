@@ -81,6 +81,7 @@ namespace Concert2Go
 				dataInput.Muzieksoort = sp.SelectedItem.ToString();
 				dataInput.Datum = DateTime.Parse(dtm.Text);
 				dataInput.Opmerking = opm.Text.ToString();
+				// Refreshen van de input velden en melding tonen na succesvol invoeren van data
 				if(cdb.insertUpdateData(dataInput))
 				{
 					Toast.MakeText(this, "Je gegevens zijn succesvol toegevoegd!", ToastLength.Long).Show();
@@ -118,6 +119,7 @@ namespace Concert2Go
 			return null;
 		}
 
+		// Menu aanmaken met de drie schermen voor navigatie binnen de applicatie
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
 		{
 			base.OnCreateOptionsMenu(menu);

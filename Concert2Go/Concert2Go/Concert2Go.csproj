@@ -76,6 +76,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Resources\Raw\" />
+    <Folder Include="Resources\raw\" />
   </ItemGroup>
 </Project>

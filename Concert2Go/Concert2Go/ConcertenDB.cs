@@ -28,6 +28,7 @@ namespace Concert2Go
 			result = createDatabase (pathToDatabase);
 		}
 
+		// Aanmaken database
 		private string createDatabase(string path)
 		{
 			try
@@ -42,6 +43,7 @@ namespace Concert2Go
 			}
 		}
 
+		// Toevoegen en updaten van data
 		public bool insertUpdateData(Concerten data)
 		{
 			try
@@ -59,6 +61,7 @@ namespace Concert2Go
 			}
 		}
 
+		// Laat zien hoeveel rijen er in de database zitten
 		public int aantalRijen()
 		{
 			try
@@ -73,6 +76,7 @@ namespace Concert2Go
 			}
 		}
 
+		// Laat laatste ID zien
 		public int LaatsteID()
 		{
 			try
@@ -87,11 +91,13 @@ namespace Concert2Go
 			}
 		}
 
+		// Zoeken op ID
 		public static IEnumerable<Concerten> QueryConcerten (SQLiteConnection db, int id)
 		{
 			return db.Query<Concerten> ("select * from Concerten where ID = ?", id);
 		}
 
+		// Method om data te laten zien in het overzicht op het Overzicht scherm
 		public static List<String> alleRijen(SQLiteConnection db)
 		{
 			List<String> rijen = new List<String> ();
@@ -102,6 +108,7 @@ namespace Concert2Go
 			return rijen;
 		}
 
+		// Verwijderen van data
 		public void DeleteRecord(int iId)
 		{
 			try

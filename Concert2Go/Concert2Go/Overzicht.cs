@@ -37,12 +37,17 @@ namespace Concert2Go
 			adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, ConcertenDB.alleRijen (csdb.db));
 			lv.Adapter = adapter;
 
+			// Verwijderen van row nadat er een ID is ingevuld
 			lv.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				Toast.MakeText(this, e.Position.ToString(), ToastLength.Short).Show();
 				Concerten cs = new Concerten();
-				int positie = Convert.ToInt16(del.Text);
 
-				csdb.DeleteRecord(positie);
+				if (del.Text != "")
+				{
+					int positie = Convert.ToInt16(del.Text);
+					csdb.DeleteRecord(positie);
+				}
+
 			};
 
 			sv.TextChanged += InputSearchTextChanged;
@@ -50,15 +55,14 @@ namespace Concert2Go
 
 		}
 
+		// Menu aanmaken met de drie schermen voor navigatie binnen de applicatie
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
 		{
 			base.OnCreateOptionsMenu(menu);
 			int groupId = 0;
 			int menuItemId = Android.Views.Menu.First;
 			int menuItemOrder = Android.Views.Menu.None;
-			// Text to be displayed for this menu item.
 			int menuItemText = Resource.String.menuitem1;
-			// Create the menu item and keep a reference to it.
 			//Het eerste menu item wordt hier toegevoegd
 			IMenuItem menuItem1 = menu.Add(groupId, menuItemId, menuItemOrder, menuItemText);
 			menuItem1.SetShortcut('1', 'a');
@@ -76,6 +80,7 @@ namespace Concert2Go
 			return true;
 		}
 
+		// Het wisselen van scherm binnen het menu
 		public override bool OnMenuItemSelected(int featureID, IMenuItem item)
 		{
 			base.OnMenuItemSelected (featureID, item);
@@ -97,6 +102,7 @@ namespace Concert2Go
 			return false;
 		}
 
+		// Zoeken binnen het overzicht op het Overzicht scherm
 		private void InputSearchTextChanged(object sender, TextChangedEventArgs args)
 		{
 			adapter.Filter.InvokeFilter (sv.Text);

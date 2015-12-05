@@ -24,6 +24,7 @@ namespace Concert2Go
 
 		}
 
+		// Menu aanmaken met de drie schermen voor navigatie binnen de applicatie
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
 		{
 			base.OnCreateOptionsMenu(menu);
